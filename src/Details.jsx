@@ -36,6 +36,7 @@ class Details extends Component {
 
       return (
         <div className="details">
+          <Carousel images={images}></Carousel>
           <div>
             <h1>{name}</h1>
             <h2>
@@ -44,7 +45,6 @@ class Details extends Component {
             <button>Adopt {name}</button>
             <p>{description}</p>
           </div>
-          <Carousel images={images}></Carousel>
         </div>
       );
     } else {
