@@ -12,6 +12,7 @@ export default function SearchParams() {
   const [breeds] = useBreedList(animal);
   const [pets, setPets] = useState([]);
 
+  // useEffect is same as componentDidMount
   useEffect(() => {
     requestPets();
   }, []);

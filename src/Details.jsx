@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import Carousel from "./Carousel";
 
 class Details extends Component {
   // a constructor always runs when an instance of the class is created
@@ -8,6 +9,8 @@ class Details extends Component {
 
     this.state = { loading: true, pet: null };
   }
+
+  state = {};
 
   async componentDidMount() {
     const res = await fetch(
@@ -21,7 +24,15 @@ class Details extends Component {
 
   render() {
     if (this.state.pet && !this.state.loading) {
-      const { animal, breed, city, state, description, name } = this.state.pet;
+      const {
+        animal,
+        breed,
+        city,
+        state,
+        description,
+        name,
+        images,
+      } = this.state.pet;
 
       return (
         <div className="details">
@@ -33,6 +44,7 @@ class Details extends Component {
             <button>Adopt {name}</button>
             <p>{description}</p>
           </div>
+          <Carousel images={images}></Carousel>
         </div>
       );
     } else {
