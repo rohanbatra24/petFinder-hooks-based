@@ -36,17 +36,19 @@ class Details extends Component {
       } = this.state.pet;
 
       return (
-        <div className="details">
-          <Carousel images={images}></Carousel>
-          <div>
-            <h1>{name}</h1>
-            <h2>
-              {animal} - {breed} - {city}, {state}
-            </h2>
-            <button>Adopt {name}</button>
-            <p>{description}</p>
+        <ThemeContext.Consumer>
+          <div className="details">
+            <Carousel images={images}></Carousel>
+            <div>
+              <h1>{name}</h1>
+              <h2>
+                {animal} - {breed} - {city}, {state}
+              </h2>
+              <button>Adopt {name}</button>
+              <p>{description}</p>
+            </div>
           </div>
-        </div>
+        </ThemeContext.Consumer>
       );
     } else {
       return <h2>Loading...</h2>;
